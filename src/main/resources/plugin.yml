@@ -1,0 +1,4 @@
+name: SoulCore
+version: '${project.version}'
+main: com.thatsoulyguy.soulcore.SoulCore
+api-version: '1.20'
