@@ -11,7 +11,7 @@ public class SUpdateManager
 {
     private static final Map<String, Runnable> updateCalls = new HashMap<>();
 
-    public static void Initialize(JavaPlugin plugin)
+    public static void Initialize(JavaPlugin plugin, int frequency)
     {
         new BukkitRunnable()
         {
@@ -21,7 +21,7 @@ public class SUpdateManager
                 for(Runnable call : SUpdateManager.GetUpdateCalls())
                     call.run();
             }
-        }.runTaskTimer(plugin, 0L, 20L);
+        }.runTaskTimer(plugin, 0L, frequency);
     }
 
     public static void Register(String id, Runnable function)
